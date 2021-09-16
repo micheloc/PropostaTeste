@@ -40,11 +40,14 @@ namespace WebApi.Controllers
         // PUT api/<controller>/5
         public ValidationResult Put(int id, [FromBody] Sexo obj)
         {
+            return _sexoAppService.Update(obj); 
         }
 
         // DELETE api/<controller>/5
         public ValidationResult Delete(int id)
         {
+            Sexo obj = _sexoAppService.Find(id);
+            return _sexoAppService.Remove(obj); 
         }
     }
 }
