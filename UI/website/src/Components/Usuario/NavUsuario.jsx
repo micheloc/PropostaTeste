@@ -69,6 +69,10 @@ class componentName extends Component {
     this.setState({openRelatorio: !this.state.openRelatorio}); 
   }
 
+  setDefaultRelatorio = () => { 
+    this.setState({openRelatorio: false})
+  }
+
 
   render() {
     /*
@@ -97,7 +101,7 @@ class componentName extends Component {
     };
 
     const PDFRelatorio = () => { 
-      return <Relatorio openrelatorio={this.state.openRelatorio}/>;  
+      return <Relatorio openrelatorio={this.state.openRelatorio} onCloseRelatorio={this.setDefaultRelatorio}/>;  
     }
 
     return (
@@ -130,7 +134,7 @@ class componentName extends Component {
                     <Button outline color="success" onClick={this.openCadastro}>Cadastrar</Button>
                     <Button outline color="primary" onClick={this.openEdit}    >Editar   </Button>  
                     <Button outline color="danger"  onClick={this.openDelete}  >Excluir  </Button> 
-                    <Button outline color="warning" onClick={this.setOpenRelatorio}>imprimir </Button> 
+                    <Button outline color="warning" onClick={() => this.setOpenRelatorio()}>imprimir </Button> 
                   </ButtonGroup>
                 </Col>
               </Row>
