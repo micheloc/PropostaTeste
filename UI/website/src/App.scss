@@ -1,3 +1,7 @@
 @import '~@coreui/icons/css/coreui-icons.css';
 @import '~font-awesome/css/font-awesome.min.css';
-@import './SCSS/style.scss'; 
+@import '~react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+@import "~@coreui/coreui/scss/coreui.scss";
+@import '~@coreui/coreui/scss/_dropdown-menu-right.scss';
+
+@import './SCSS/csscustom.scss'; 
