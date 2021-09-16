@@ -24,6 +24,7 @@
     "html2canvas": "^1.0.0-rc.7",
     "jquery": "^3.4.1",
     "lodash": "^4.17.20",
+    "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-app-polyfill": "^1.0.1",
     "react-bootstrap": "^1.0.0-beta.9",
