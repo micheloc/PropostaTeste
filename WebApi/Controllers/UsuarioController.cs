@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LibraryAPP.Interfaces;
+using LibraryDomain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,16 +11,22 @@ namespace WebApi.Controllers
 {
     public class UsuarioController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        private readonly IUsuarioAppService _usuarioAppService;
+        public UsuarioController(IUsuarioAppService usuarioAppService)
         {
-            return new string[] { "value1", "value2" };
+            _usuarioAppService = usuarioAppService; 
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        // GET api/usuario
+        public IEnumerable<Usuario> Get()
         {
-            return "value";
+            return _usuarioAppService.GetAll();
+        }
+
+        // GET api/Usuario/5
+        public Usuario Get(int id)
+        {
+            return _usuarioAppService.Find(id);
         }
 
         // POST api/<controller>

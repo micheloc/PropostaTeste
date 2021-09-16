@@ -1,6 +1,5 @@
-﻿using FluentValidation.WebApi;
-using Microsoft.Owin.Security.OAuth;
-using System.Web.Http;
+﻿using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace WebApi
 {
@@ -8,7 +7,8 @@ namespace WebApi
     {
         public static void Register(HttpConfiguration config)
         {
-            // Serviços e configuração da API da Web
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
 
             // Web API routes
             config.MapHttpAttributeRoutes();
