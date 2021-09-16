@@ -7,13 +7,13 @@ namespace LibraryInfraData.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class GenerateDb : IMigrationMetadata
+    public sealed partial class createdatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(GenerateDb));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(createdatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "202109160152501_GenerateDb"; }
+            get { return "202109161346318_createdatabase"; }
         }
         
         string IMigrationMetadata.Source

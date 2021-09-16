@@ -3,7 +3,7 @@ namespace LibraryInfraData.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class GenerateDb : DbMigration
+    public partial class createdatabase : DbMigration
     {
         public override void Up()
         {

@@ -71,9 +71,9 @@
     <Compile Include="Context\Interfaces\IDbContext.cs" />
     <Compile Include="Context\MapConfig\SexoConfig.cs" />
     <Compile Include="Context\MapConfig\UsuarioConfig.cs" />
-    <Compile Include="Migrations\202109160152501_GenerateDb.cs" />
-    <Compile Include="Migrations\202109160152501_GenerateDb.Designer.cs">
-      <DependentUpon>202109160152501_GenerateDb.cs</DependentUpon>
+    <Compile Include="Migrations\202109161346318_createdatabase.cs" />
+    <Compile Include="Migrations\202109161346318_createdatabase.Designer.cs">
+      <DependentUpon>202109161346318_createdatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,13 +88,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202109160152501_GenerateDb.resx">
-      <DependentUpon>202109160152501_GenerateDb.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202109161346318_createdatabase.resx">
+      <DependentUpon>202109161346318_createdatabase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
