@@ -1,10 +1,7 @@
-﻿using LibraryAPP.Interfaces;
+﻿using FluentValidation.Results;
+using LibraryAPP.Interfaces;
 using LibraryDomain.Entities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace WebApi.Controllers
@@ -29,19 +26,23 @@ namespace WebApi.Controllers
             return _usuarioAppService.Find(id);
         }
 
-        // POST api/<controller>
-        public void Post([FromBody] string value)
+        // POST api/Usuario
+        public ValidationResult Post([FromBody] Usuario obj)
         {
+            return _usuarioAppService.Add(obj); 
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
+        // PUT api/Usuario/5
+        public ValidationResult Put(int id, [FromBody] Usuario obj)
         {
+            return _usuarioAppService.Update(obj); 
         }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
+        // DELETE api/Usuario/5
+        public ValidationResult Delete(int id)
         {
+            Usuario obj = _usuarioAppService.Find(id);
+            return _usuarioAppService.Remove(obj); 
         }
     }
 }

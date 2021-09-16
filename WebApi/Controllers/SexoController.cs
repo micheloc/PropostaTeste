@@ -1,4 +1,5 @@
-﻿using LibraryAPP.Interfaces;
+﻿using FluentValidation.Results;
+using LibraryAPP.Interfaces;
 using LibraryDomain.Entities;
 using System;
 using System.Collections.Generic;
@@ -31,17 +32,18 @@ namespace WebApi.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody] string value)
+        public ValidationResult Post([FromBody] Sexo obj)
         {
+            return _sexoAppService.Add(obj);
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
+        public ValidationResult Put(int id, [FromBody] Sexo obj)
         {
         }
 
         // DELETE api/<controller>/5
-        public void Delete(int id)
+        public ValidationResult Delete(int id)
         {
         }
     }
