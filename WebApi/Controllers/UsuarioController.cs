@@ -26,6 +26,15 @@ namespace WebApi.Controllers
             return _usuarioAppService.Find(id);
         }
 
+        [HttpGet]
+        [ActionName("getlistuser")]
+        [Route("api/Usuario/getlistuser")]
+        public IEnumerable<Usuario> GetListUser(string filter)
+        {
+            return _usuarioAppService.GetListUser(filter); 
+        }
+
+
         // POST api/Usuario
         public ValidationResult Post([FromBody] Usuario obj)
         {
@@ -39,6 +48,7 @@ namespace WebApi.Controllers
         }
 
         // DELETE api/Usuario/5
+        [HttpDelete]
         public ValidationResult Delete(int id)
         {
             Usuario obj = _usuarioAppService.Find(id);

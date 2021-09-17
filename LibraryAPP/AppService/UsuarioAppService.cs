@@ -2,6 +2,7 @@
 using LibraryAPP.Interfaces;
 using LibraryDomain.Entities;
 using LibraryDomain.Interfaces.Service;
+using System.Collections.Generic;
 
 namespace LibraryAPP.AppService
 {
@@ -12,6 +13,11 @@ namespace LibraryAPP.AppService
             : base(usuarioService)
         {
             _usuarioService = usuarioService;
+        }
+
+        public IEnumerable<Usuario> GetListUser(string filter)
+        {
+            return _usuarioService.GetListUser(filter); 
         }
     }
 }

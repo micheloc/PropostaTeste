@@ -1,6 +1,7 @@
 ﻿using LibraryDomain.Entities;
 using LibraryDomain.Interfaces.Repository;
 using LibraryDomain.Services._Base;
+using System.Collections.Generic;
 
 namespace LibraryDomain.Interfaces.Service
 {
@@ -11,6 +12,11 @@ namespace LibraryDomain.Interfaces.Service
             : base(repository)
         {
             _repository = repository;
+        }
+
+        public IEnumerable<Usuario> GetListUser(string filter)
+        {
+            return _repository.GetListUser(filter); 
         }
     }
 }
